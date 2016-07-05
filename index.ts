@@ -247,6 +247,7 @@ export default function generate(options: Options): Promise<void> {
 		sendMessage('processing:');
 		let mainExportDeclaration = false;
 		let mainExportAssignment = false;
+		let tripFileExtRegExp = /\.[^\.]+/;
 		program.getSourceFiles().some(function (sourceFile) {
 			// Source file is a default library, or other dependency from another project, that should not be included in
 			// our bundled output
@@ -267,7 +268,7 @@ export default function generate(options: Options): Promise<void> {
 			}
 
 			// We can optionally output the main module if there's something to export.
-			if (options.main && options.main === (options.name + filenameToMid(sourceFile.fileName.slice(baseDir.length, -3)))) {
+			if (options.main && options.main === (options.name + filenameToMid(sourceFile.fileName.replace(tripFileExtRegExp, '').slice(baseDir.length)))) {	
 				ts.forEachChild(sourceFile, function (node: ts.Node) {
 					mainExportDeclaration = mainExportDeclaration || isNodeKindExportDeclaration(node);
 					mainExportAssignment = mainExportAssignment || isNodeKindExportAssignment(node);
