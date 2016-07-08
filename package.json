@@ -1,14 +1,14 @@
 {
-	"name": "dts-generator",
+	"name": "x-dts-generator",
 	"description": ".d.ts generator. Generates a single d.ts bundle containing external modules from TypeScript files.",
-	"version": "1.8.0-pre",
+	"version": "1.0.1",
 	"bugs": {
-		"url": "https://github.com/SitePen/dts-generator/issues"
+		"url": "https://github.com/maolion/dts-generator/issues"
 	},
 	"license": "BSD-3-Clause",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/SitePen/dts-generator.git"
+		"url": "https://github.com/maolion/dts-generator.git\\#x-dts-generator"
 	},
 	"bin": {
 		"dts-generator": "bin/dts-generator"
@@ -19,7 +19,7 @@
 		"mkdirp": "0.5.1"
 	},
 	"peerDependencies": {
-		"typescript": "^1.6.0"
+		"typescript": "^1.8.0"
 	},
 	"devDependencies": {
 		"intern": "~3.0.0",
