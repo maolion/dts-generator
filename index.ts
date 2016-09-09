@@ -10,7 +10,7 @@ interface Options {
 	baseDir?: string;
 	project?: string;
 	files?: string[];
-	excludes?: string[];
+	exclude?: string[];
 	externs?: string[];
 	eol?: string;
 	includes?: string[];
@@ -204,16 +204,16 @@ export default function generate(options: Options): Promise<void> {
 	filenames.forEach(name => { verboseMessage('  ' + name); });
 	const excludesMap: { [filename: string]: boolean; } = {};
 
-	options.excludes = options.excludes || [ 'node_modules/**/*.d.ts' ];
+	options.exclude = options.exclude || [ 'node_modules/**/*.d.ts' ];
 
-	options.excludes && options.excludes.forEach(function (filename) {
+	options.exclude && options.exclude.forEach(function (filename) {
 		glob.sync(filename).forEach(function(globFileName) {
 			excludesMap[filenameToMid(pathUtil.resolve(baseDir, globFileName))] = true;
 		});
 	});
-	if (options.excludes) {
+	if (options.exclude) {
 		verboseMessage('exclude:');
-		options.excludes.forEach(name => { verboseMessage('  ' + name); });
+		options.exclude.forEach(name => { verboseMessage('  ' + name); });
 	}
 
 	mkdirp.sync(pathUtil.dirname(options.out));
