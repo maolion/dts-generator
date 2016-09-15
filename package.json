@@ -1,7 +1,7 @@
 {
 	"name": "x-dts-generator",
 	"description": ".d.ts generator. Generates a single d.ts bundle containing external modules from TypeScript files.",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"bugs": {
 		"url": "https://github.com/maolion/dts-generator/issues"
 	},
