@@ -1,32 +1,33 @@
 {
-	"name": "x-dts-generator",
-	"description": ".d.ts generator. Generates a single d.ts bundle containing external modules from TypeScript files.",
-	"version": "1.0.6",
-	"bugs": {
-		"url": "https://github.com/maolion/dts-generator/issues"
-	},
-	"license": "BSD-3-Clause",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/maolion/dts-generator.git#x-dts-generator"
-	},
-	"bin": {
-		"dts-generator": "bin/dts-generator"
-	},
-	"dependencies": {
-		"bluebird": "3.3.3",
-		"glob": "7.0.0",
-		"mkdirp": "0.5.1"
-	},
-	"devDependencies": {
-		"intern": "~3.0.0",
-		"tsd": "0.6.5",
-		"tslint": "3.5.0",
-		"typescript": "^2.0.0"
-	},
-	"scripts": {
-		"prepublish": "./node_modules/.bin/tsc --module commonjs --target es5 typings/tsd.d.ts index.ts bin/dts-generator.ts",
-		"test": "tests/run.sh",
-		"deploy": "npm publish"
-	}
+  "name": "x-dts-generator",
+  "description": ".d.ts generator. Generates a single d.ts bundle containing external modules from TypeScript files.",
+  "version": "1.0.7",
+  "bugs": {
+    "url": "https://github.com/maolion/dts-generator/issues"
+  },
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maolion/dts-generator.git#x-dts-generator"
+  },
+  "bin": {
+    "dts-generator": "bin/dts-generator"
+  },
+  "dependencies": {
+    "bluebird": "3.3.3",
+    "glob": "7.0.0",
+    "mkdirp": "0.5.1"
+  },
+  "devDependencies": {
+    "@types/bluebird": "3.0.37",
+    "intern": "~3.0.0",
+    "tsd": "0.6.5",
+    "tslint": "3.5.0",
+    "typescript": "2.2.1"
+  },
+  "scripts": {
+    "prepublish": "./node_modules/.bin/tsc --module commonjs --target es5 typings/tsd.d.ts index.ts bin/dts-generator.ts",
+    "test": "tests/run.sh",
+    "deploy": "npm publish"
+  }
 }
